@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-main: hsl(0, 0%, 98%);
+  --Second-Background: hsl(0, 0%, 98%);
+  --Text-color: hsl(237, 14%, 26%);
+  --Footer-Text: hsl(233, 14%, 35%);
+  --shadow: hsl(234, 11%, 52%);
+  --hover: hsl(235, 21%, 11%);
+}
+/* Dark Mode  */
+.dark {
+  --background-main: hsl(235, 21%, 11%);
+  --Second-Background: hsl(235, 24%, 19%);
+  --Text-color: hsl(0, 0%, 98%);
+  --shadow: none;
+  --hover: hsl(0, 0%, 98%);
+}
+
+body {
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--background-main);
+  color: var(--Text-color);
+}
+/* Hello Page  */
+.hello {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  background: var(--Text-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--background-main);
+  align-items: center;
+  border-radius: 10px;
+  gap: 35px;
+}
+.hello input {
+  border: none;
+  background: var(--Second-Background);
+  outline: none;
+  padding: 15px;
+  border-radius: 7px;
+  color: var(--Text-color);
+  font-family: "Josefin Sans", sans-serif;
+}
+.hello input:hover {
+  transition: 0.3s;
+  border-radius: 10px 15px;
+}
+.hello button {
+  border: none;
+  padding: 10px 20px;
+  background: #f44336;
+  border-radius: 13px 7px;
+  color: var(--Text-color);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* IntarFace Page  */
+.image {
+  height: 300px;
+  background-image: url(images/bg-desktop-light.jpg);
+  background-size: cover;
+}
+/* The Parent Element  */
+
+.container {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -190px);
+  padding-bottom: 15px;
+  display: none;
+}
+
+.completed {
+  color: var(--Footer-Text);
+}
+
+/* Title Section  */
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+header h2 {
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: hsl(0, 0%, 98%);
+  overflow-wrap: break-word;
+}
+header h2 span {
+  margin-left: 10px;
+  color: #f44336;
+}
+header img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/*  Task Entry Field */
+
+section .entry-box {
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  background-color: var(--Second-Background);
+}
+section .entry-box span {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--Footer-Text);
+}
+section .entry-box span:hover {
+  background-image: linear-gradient(to right, #70bbfc, #a27af4);
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+section .entry-box input {
+  width: calc(100% - 90px);
+  padding: 0px 15px;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  caret-color: #44629e;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* Task View Box  */
+.list {
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0;
+}
+.list div {
+  min-height: 50px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--Second-Background);
+  overflow-wrap: break-word;
+  box-shadow: 0px 0 5px 0px var(--shadow);
+}
+
+i {
+  cursor: pointer;
+}
+.list div p {
+  width: 290px;
+}
+
+.list div.habit input {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--Text-color);
+  color: var(--background-main);
+  width: 290px;
+  font-size: 15px;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.list div.complete p {
+  text-decoration: line-through;
+  color: gray;
+}
+div.habit span :last-child {
+  display: none;
+}
+div.habit span.check :first-child {
+  display: none;
+}
+div.habit span.check :last-child {
+  display: block;
+}
+.list div .delet {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.list div img:first-child:hover,
+.list div span:hover {
+  cursor: pointer;
+}
+
+/* Footer Option  */
+footer {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  color: var(--Footer-Text);
+  background-color: var(--Second-Background);
+  box-shadow: 0px 0 3px 0px var(--shadow);
+}
+
+footer :nth-child(2) {
+  color: #3e64c5;
+}
+footer span:hover {
+  color: var(--hover);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.edit.box {
+  width: 270px;
+  height: 100px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Text-color);
+  font-weight: bold;
+  border-radius: 5px;
+  color: #f44336;
+}
+
+.edit span {
+  position: absolute;
+  top: 0px;
+  background: #673ab7;
+  color: white;
+  width: 20px;
+  right: 0px;
+  text-align: center;
+  border-radius: 2px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.edit {
+  display: none;
+}
+
+.copy-right {
+  width: 250px;
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.copy-right span.two {
+  color: #f44336;
+  font-size: 25px;
+  margin-left: 5px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 300px;
+  }
+  .list div.habit p {
+    width: 170px;
+  }
+  .list div.habit input {
+    width: 170px;
+  }
+  header h2 {
+    max-width: 400px;
+  }
+  .hello {
+    width: 300px;
+  }
+}
